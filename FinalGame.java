@@ -2,16 +2,16 @@
 
 public class FinalGame {
 	public static void main(String[] args) {
-		int TotalWinsNeeded = 100;
+		int TotalWinsNeeded = 200;
 		int[] NumberOfWins = new int[] { 0, 0 };
 		String[] PlayerNames = new String[] { "", "" };
 		boolean isFinal = false;
 		while (!isFinal) {
-			Table tbl = new Table(8);
+			Table tbl = new Table(4);
 			tbl.set_player(0, new PlayerEx(1000)); // replace PlayerEx with your
-													// own Player class (Name:Player+StudentID)
-			tbl.set_player(1, new PlayerYJT(1000)); // replace PlayerEx with
-													// your own Player class (Name:Player+StudentID)
+													// own Player class (Name:Player+"_"+StudentID)
+			tbl.set_player(1, new PlayerEx(1000)); // replace PlayerEx with
+													// your own Player class (Name:Player+"_"+StudentID)
 			tbl.set_dealer(new Dealer());
 			boolean isGameOver = false;
 			while (!isGameOver) {
@@ -41,8 +41,9 @@ public class FinalGame {
 			} else {
 				System.out.println("Dealer! We need another game!");
 			}
-			if (NumberOfWins[0] >= TotalWinsNeeded || NumberOfWins[1] >= TotalWinsNeeded) {
-				isFinal = true;
+			if((NumberOfWins[0]>=TotalWinsNeeded||NumberOfWins[1]>=TotalWinsNeeded)&&
+					NumberOfWins[0]!=NumberOfWins[1]){
+				isFinal=true;
 			}
 		}
 		if (NumberOfWins[0] > NumberOfWins[1]) {
