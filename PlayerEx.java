@@ -8,7 +8,7 @@ public class PlayerEx extends Player {
 
 	@Override
 	public int make_bet() {
-		setBet(100);
+		setBet(5);
 		if (getBet() <= get_current_chips()) {
 			return getBet();
 		} else {
