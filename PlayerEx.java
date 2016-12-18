@@ -12,7 +12,6 @@ public class PlayerEx extends Player {
 		if (getBet() <= get_current_chips()) {
 			return getBet();
 		} else {
-			System.out.println("Your Bet is " + getBet() + ", You don't have so many chips");
 			setBet(0);
 			return getBet();
 		}
